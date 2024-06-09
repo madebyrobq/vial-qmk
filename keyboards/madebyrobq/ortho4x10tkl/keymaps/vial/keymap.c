@@ -21,15 +21,15 @@ enum layers {
 #define DOT_CMD LCMD_T(KC_DOT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /*
+    /* Note: combos must be configured in the VIAL application
      * ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐┌───────┬───────┬───────┐
      * │   Q (TAB) W   │   E   │   R   │   T   │   Y   │   U   ││   I   │   O (DEL) P   │
      * └───────┴───────┴───────┴───────┴───────┴───────┴───────┘├───────┼───────┼───────┤
      * ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐│   K   │   L (ENT) ;   │
      * │   A (ESC) S   │   D   │   F   │   G   │   H   │   J   │└───────┴───────┴───────┘
-     * ├───────┼───────┼───────┼───────┼───────┼───────┼───────┤┌───────┬───────┬───────┐
-     * │  Z(⇧) │   X   │   C   │   V   │   B   │   N   │  M(⇧) ││  PGDN │   Up  │  PGUP │
-     * ├───────┼───────┼───────┴───────┴───────┼───────┼───────┤├───────┼───────┼───────┤
+     * ├───────┼───────┼───────┼───────┼───────┼───────┼───────┤┌       ┌───────┐       ┐
+     * │  Z(⇧) │   X   │   C   │   V   │   B   │   N   │  M(⇧) │  PG DN │   Up  │ PG UP
+     * ├───────┼───────┼───────┴───────┴───────┼───────┼───────┤┌───────┼───────┼───────┐
      * │   ⌥   │   ⌘   │         Space         │SPC/RSE│SPC/RSE││  Left │  Down │ Right │
      * └───────┴───────┴───────────────────────┴───────┴───────┘└───────┴───────┴───────┘
      */
@@ -41,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [RAISE_LAYER] = LAYOUT_ortho_4x10(
-        KC_1,    KC_2,    KC_3,    KC_4,    KC_MINS, KC_PPLS, KC_EQL,  KC_LBRC, KC_RBRC, KC_QUOT,
+        KC_1,    KC_2,    KC_3,    KC_4,    KC_MINS, KC_PPLS, KC_GRV,  KC_LBRC, KC_RBRC, KC_QUOT,
         KC_4,    KC_5,    KC_6,    KC_0,    KC_PSLS, KC_PAST, KC_EQL,  KC_LPRN, KC_RPRN, _______,
-        KC7_SFT, KC_8,    KC_9,    KC_DOT,  KC_PIPE, KC_AMPR, KC_QUES, XXXXXXX, _______, XXXXXXX,
-        KC_LALT, KC0_CMD, _______, _______, _______, KC_COMM, KC_DOT,  KC_LT,   _______, KC_GT
+        KC7_SFT, KC_8,    KC_9,    KC_DOT,  KC_PIPE, KC_AMPR, KC_QUES, XXXXXXX, KC_RSFT, XXXXXXX,
+        _______, KC0_CMD, _______, _______, _______, KC_COMM, KC_DOT,  KC_LT,   KC_RCTL, KC_GT
     ),
 };
